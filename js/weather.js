@@ -1,5 +1,5 @@
 // API key. Replace with your API key
-const APIKEY = 'f2f85762267ef18d0df71e18ec9f3737';
+const APIKEY = "key";
 // City
 const city = 'Spokane';
 // Units for Farenheit
@@ -15,16 +15,22 @@ fetch(url)
 
   // Check-check: Is data good? 
   console.log( data );
+  console.log( data.weather[0].main);
   
   // Get Container for Weather   
   const weatherContainer = document.querySelector('.weather');
   
   // Template to output
+  //<h1 class="weather-heading" >Weather</h1>
+  //<data value="${data.name}" class="city">${data.name}</data>
+  //<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Placeholder">
   const template = `
-    <h1>Weather</h1>
-    <data value="${data.name}" class="city">${data.name}</data>
-    <data value="${data.main.temp}" class="temp">${data.main.temp}&#8457;</data>
-    <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Placeholder">
+    <img src="/icons/${data.weather[0].main}2x.png" alt="Placeholder">
+    <data value="${data.main.temp}" class="temp">${parseInt(data.main.temp)}&#176;</data>
+    <div class="information">
+      <data value="${data.weather[0].description}" class="description">${data.weather[0].description}</data>
+      <data value="${data.name}" class="city">${data.name}</data>
+    </div>
   `;
   
   // Insert dynamic template to container

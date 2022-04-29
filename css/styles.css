@@ -1,19 +1,32 @@
+@import url(./satoshi.css);
+
+/* font-family: 'Satoshi-Variable';
+font-family: 'Satoshi-VariableItalic';
+font-family: 'Satoshi-Light';
+font-family: 'Satoshi-LightItalic';
+font-family: 'Satoshi-Regular';
+font-family: 'Satoshi-Italic';
+font-family: 'Satoshi-Medium';
+font-family: 'Satoshi-MediumItalic';
+font-family: 'Satoshi-Bold';
+font-family: 'Satoshi-BoldItalic';
+font-family: 'Satoshi-Black';
+font-family: 'Satoshi-BlackItalic'; */
+
 /* Grid */
 .layout{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 /* Widgets */
 section {
-  background: lightgray;
   padding: 1em;
-  
   /* Relative Parent. Absolute Child */
-  position: relative;
+  /* position: relative; */
 }
 
 /* Time */
@@ -52,17 +65,39 @@ section {
 
 /* Weather */
 .weather {
-  
+  background: blue;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  max-width: 700px;
+}
+
+.weather-heading{
+  font-family: 'Satoshi-Variable';
+  font-size: 3.5em;
+}
+
+
+
+.temp {
+  font-family: 'Satoshi-Bold';
+  font-size : clamp(3rem, 10vw, 15rem);
+  background: red;
+
+}
+
+.description{
+  background: yellow;
+  font-family: 'Satoshi-Medium';
+  font-size: clamp(1rem, 2.5vw, 5rem);
 }
 
 .city {
-  
+  font-family: 'Satoshi-Light';
+  font-size: clamp(1rem, 2vw, 3rem);
 }
 
-.temp {
-  
-}
 
 .weather img {
-  
+  width: 40%;
 }
