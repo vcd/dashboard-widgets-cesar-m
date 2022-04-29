@@ -24,7 +24,7 @@ font-family: 'Satoshi-BlackItalic'; */
 
 /* Widgets */
 section {
-  padding: 1em;
+  /* padding: .5em; */
   /* Relative Parent. Absolute Child */
   /* position: relative; */
 }
@@ -65,11 +65,14 @@ section {
 
 /* Weather */
 .weather {
-  background: blue;
+  background: rgba(255, 248, 242, 1);
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
+  gap: .2em;
   align-items: center;
   max-width: 700px;
+  border-radius: 20px;
 }
 
 .weather-heading{
@@ -81,23 +84,46 @@ section {
 
 .temp {
   font-family: 'Satoshi-Bold';
-  font-size : clamp(3rem, 10vw, 15rem);
-  background: red;
+  font-size: 7em;
+  /* font-size: clamp(1.5em, 5em, 8rem); */
+  /* background: red; */
 
+}
+
+.information{
+  padding: .5em;
 }
 
 .description{
-  background: yellow;
+  display: block;
+  /* background: yellow; */
   font-family: 'Satoshi-Medium';
-  font-size: clamp(1rem, 2.5vw, 5rem);
+  font-size: clamp(.9rem, 2.5vw, 3rem);
 }
 
 .city {
+  display: block;
   font-family: 'Satoshi-Light';
   font-size: clamp(1rem, 2vw, 3rem);
 }
 
 
 .weather img {
-  width: 40%;
+  max-width: 40%;
+  position: relative;
+  top: -30%;
 }
+
+@media (min-width: 0px) and (max-width: 320px) {
+  .temp {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .temp {
+    font-size: 5em;
+  }
+
+}
+
