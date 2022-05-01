@@ -2,27 +2,27 @@
 Static Data
 ************/
 const allTheMonths = [
-  "January",
-  "February",
-  "March",
-  "April",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
   "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
 ];
 const allTheDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
+  "Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat"
 ];
 
 /************
@@ -63,7 +63,7 @@ Set DOM Elements
 // Set the month
 month.innerText = allTheMonths[gotMonth];
 // Set day of the month
-dayOfMonth.innerText = gotDayOfMonth;
+dayOfMonth.innerText = (gotDayOfMonth > 9) ? gotDayOfMonth : `0${gotDayOfMonth}`;
 // Set the year
 year.innerText = gotYear;
 // Set the day of the week
