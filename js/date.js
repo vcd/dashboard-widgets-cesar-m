@@ -52,7 +52,7 @@ const month = document.querySelector(".month");
 // Get day of the month
 const dayOfMonth = document.querySelector(".dayOfMonth");
 // Get year
-const year = document.querySelector('.year');
+// const year = document.querySelector('.year');
 // Get Day of Week
 const dayOfWeek = document.querySelector('.dayOfWeek');
 
@@ -65,6 +65,6 @@ month.innerText = allTheMonths[gotMonth];
 // Set day of the month
 dayOfMonth.innerText = (gotDayOfMonth > 9) ? gotDayOfMonth : `0${gotDayOfMonth}`;
 // Set the year
-year.innerText = gotYear;
+// year.innerText = gotYear;
 // Set the day of the week
 dayOfWeek.innerText = allTheDays[gotDayOfWeek];
