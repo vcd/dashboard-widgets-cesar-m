@@ -1,4 +1,5 @@
 # Dashboard Widgets
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5b603926-6a61-4201-b7db-0d4a97ac6f16/deploy-status)](https://app.netlify.com/sites/dashboard-widgets-cesar/deploys)
 
 ## What Is This?
 
@@ -7,14 +8,8 @@ The concept of a Dashboard appears nearly everywhere. Most obvious are car dashb
 - [Android Widgets](https://developer.android.com/guide/topics/appwidgets/overview)
 - [iOS Widgets](https://www.imore.com/widgets-ios-8-explained)
 
-## Why Does This Exist?
-
-- Application of Dashboard Design concepts
-- APIs allows for alternative User Interfaces for same information
-- Real products and real data, versus static prototypes
-- Dashboards convey information in real-time — without prompting
-- Apply concepts from Web Design 1 and 2 with APIs from Web 3
-
 ## Citations
 
-List your sources here
+- [CSS Clock Design Tutorial](https://www.youtube.com/watch?v=weZFfrjF-k4&t=14s)
+- [Icon set](https://www.figma.com/community/file/1091060802945476262)
+- [Grid generator](https://cssgrid-generator.netlify.app/)
