@@ -11,6 +11,7 @@ const units = 'imperial';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`;
 
 let currentTemp = 0.0;
+let feelsLikeTemp = 0.0;
 let currentConvertedTemp = 0.0;
 
 //capitalize first letter of every word
@@ -44,6 +45,7 @@ fetch(url)
   // Get Container for Weather   
   const weatherContainer = document.querySelector('.weather');
   currentTemp = data.main.temp;
+  feelsLikeTemp = data.main.feels_like;
   
   // Template to output
   //<h1 class="weather-heading" >Weather</h1>
@@ -59,7 +61,7 @@ fetch(url)
     <div class="information">
       <data value="${data.weather[0].description}" class="description">${capitalize(data.weather[0].description)}</data>
       <data value="${data.name}" class="city">${data.name}</data>
-      <data value="${data.main.feels_like}" class="feels-like">Feels like ${parseInt(data.main.feels_like)}&#176;</data>
+      <data value="${data.main.feels_like}" class="feels-like">Feels like ${parseInt(kelvinToFarenheit(data.main.feels_like))}&#176;</data>
     </div>
   `;
   
@@ -79,7 +81,9 @@ farenheitBtn.addEventListener('click', () => {
   //convert current temp to farenheit
   currentConvertedTemp = kelvinToFarenheit(currentTemp);
   //update temp
-  document.querySelector('.temp').innerText = parseInt(currentConvertedTemp);
+  document.querySelector('.temp').innerHTML = `${parseInt(currentConvertedTemp)}&#176;`;
+  //update feels like temp
+  document.querySelector('.feels-like').innerHTML = `Feels like ${parseInt(kelvinToFarenheit(feelsLikeTemp))}&#176;`;
   //add class to farenheit button
   farenheitBtn.classList.add('btn-selected');
   //remove class from celsius button
@@ -92,7 +96,9 @@ celsiusBtn.addEventListener('click', () => {
   //convert current temp to farenheit
   currentConvertedTemp = kelvinToCelsius(currentTemp);
   //update temp
-  document.querySelector('.temp').innerText = parseInt(currentConvertedTemp);
+  document.querySelector('.temp').innerHTML = `${parseInt(currentConvertedTemp)}&#176;`;
+  //update feels like temp
+  document.querySelector('.feels-like').innerHTML = `Feels like ${parseInt(kelvinToCelsius(feelsLikeTemp))}&#176;`;
   //add class to celsius button
   celsiusBtn.classList.add('btn-selected');
   //remove class from farenheit button
