@@ -19,7 +19,8 @@
     <!-- My Scripts -->
     <script defer src="js/time.js"></script>
     <script defer src="js/date.js"></script>
-    <script defer src="js/weather.js"></script>
+    <script defer type="module" src="js/config.js"></script>
+    <script defer type="module" src="js/weather.js"></script>
 
 </head>
 <body>
@@ -28,13 +29,21 @@
     
     <!-- Time -->
     <section class="time">
-      <!-- <h1>Time</h1> -->
-      <div class="bar"></div>
-      <time>
-        <data class="hours">HH</data> 
-        <data class="minutes">MM</data> 
-        <!-- <data class="seconds">SS</data> -->
-        <data class="amOrPM">AM/PM</data>
+      <time class="clock-wrapper">
+        <div class="clock">
+
+          <div class="hour">
+              <data class="hr" id="hr"></data>
+          </div>
+  
+          <div class="min">
+              <data class="mn" id="mn"></data>
+          </div>
+  
+          <div class="sec">
+              <data class="sc" id="sc"></data>
+          </div>
+      </div>
       </time>
     </section>
 
