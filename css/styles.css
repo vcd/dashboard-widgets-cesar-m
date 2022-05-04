@@ -1,17 +1,5 @@
 @import url(./satoshi.css);
 
-/* font-family: 'Satoshi-Variable';
-font-family: 'Satoshi-VariableItalic';
-font-family: 'Satoshi-Light';
-font-family: 'Satoshi-LightItalic';
-font-family: 'Satoshi-Regular';
-font-family: 'Satoshi-Italic';
-font-family: 'Satoshi-Medium';
-font-family: 'Satoshi-MediumItalic';
-font-family: 'Satoshi-Bold';
-font-family: 'Satoshi-BoldItalic';
-font-family: 'Satoshi-Black';
-font-family: 'Satoshi-BlackItalic'; */
 
 * {
   box-sizing: border-box;
@@ -22,8 +10,9 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: purple;
+
   background: #98C1D9;
+
   height: 100vh;
 }
 
@@ -35,112 +24,22 @@ body{
   grid-auto-rows: auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+
   min-width: 320px;
   max-width: 1920px;
-  background: yellow;
 }
 
-/* Widgets */
-section {
-  /* padding: .5em; */
-  /* Relative Parent. Absolute Child */
-  /* position: relative; */
-}
-
-/* Time */
-.time {
-  grid-area: 2 / 1 / 3 / 2; 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-  /* background: #ffffff; */
-  background: #EE6C4D;
-}
-
-.time>time{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  font-family: 'Satoshi-Bold';
-  font-size: 2.5em;
-  height: 100%;
-  /* background: gray; */
-}
-
-.bar{
-  width: 20px;
-  height: 60%;
-  background: black;
-}
-
-.hours {
-}
-
-.minutes {
-}
-
-.seconds {
-}
-
-.amOrPM {
-  
-}
-
-/* Date */
-.date {
-  background: #293241;
-  width: 100%;
-  grid-area: 2 / 2 / 3 / 3;
-  color: #EE6C4D;
-}
-
-.date>time{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  padding: 1em;
-}
-
-.main-date{
-  font-family: 'Satoshi-Medium';
-  font-size: clamp(3rem, 2.5vw, 4rem);
-  padding: .25em;
-}
-
-.sub-date{
-  font-family: 'Satoshi-Bold';
-  font-size: clamp(5rem, 40vw, 7rem);
-}
-
-.month {
-}
-
-.dayOfMonth {
-  display: block;
-}
-
-.year {
-}
-
-.dayOfWeek {
-}
-
-/* Weather */
+/*-------------------------------------- Weather --------------------------------------*/
 .weather {
   grid-area: 1 / 1 / 2 / 3;
-  /* background: rgb(0, 145, 255); */
-  background: #E0FBFC;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  gap: .2em;
   align-items: center;
-  /* max-width: 700px; */
-  /* border-radius: 20px; */
+  
+  gap: .2em;
+  background: #E0FBFC;
   color: #293241;
 }
 
@@ -154,8 +53,6 @@ section {
 .temp {
   font-family: 'Satoshi-Bold';
   font-size: 7em;
-  /* font-size: clamp(1.5em, 5em, 8rem); */
-  /* background: red; */
 
 }
 
@@ -165,7 +62,6 @@ section {
 
 .description{
   display: block;
-  /* background: yellow; */
   font-family: 'Satoshi-Medium';
   font-size: clamp(.9rem, 2.5vw, 3rem);
 }
@@ -187,24 +83,52 @@ section {
 
 .weather img {
   max-width: 40%;
-  /* position: relative; */
-  /* top: -30%; */
+}
+/*-------------------------------------- End-Weather --------------------------------------*/
+
+
+/*-------------------------------------- Time --------------------------------------*/
+.time {
+  grid-area: 2 / 1 / 3 / 2; 
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  background: #EE6C4D;
 }
 
+.time>time{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  height: 100%;
+  font-family: 'Satoshi-Bold';
+  font-size: 2.5em;
+}
+
+/*-------------------------- Clock --------------------------*/
 .clock-wrapper{
   padding: .5em;
 }
+
 .clock{
-  width: 300px;
-  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 300px;
+  height: 300px;
+
   background: url(../assets/clock.png);
   background-size: cover;
   background-color: #293241;
+
   border: 8px solid #e9e6e6;
   border-radius: 50%;
+
   box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
               inset 0 -15px 15px rgba(255, 255, 255, 0.05),
               0 15px 15px rgba(0, 0, 0, 0.3),
@@ -246,7 +170,6 @@ section {
 .hr, .mn, .sc{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   position: absolute;
   border-radius: 50%;
 }
@@ -259,8 +182,6 @@ section {
   background: #ff105e;
   z-index: 10;
   border-radius: 6px 6px 0 0;
-  /* maybe fix */
-
 }
 
 .mn:before{
@@ -271,7 +192,6 @@ section {
   background: #fff;
   z-index: 11;
   border-radius: 6px 6px 0 0;
-  /* maybe fix */
 }
 
 .sc:before{
@@ -282,17 +202,54 @@ section {
   background: #fff;
   z-index: 12;
   border-radius: 6px 6px 0 0;
-  /* maybe fix */
 }
+
+/*-------------------------------------- End-Time --------------------------------------*/
+
+/*-------------------------------------- Date --------------------------------------*/
+.date {
+  background: #293241;
+  width: 100%;
+  grid-area: 2 / 2 / 3 / 3;
+  color: #EE6C4D;
+}
+
+.date>time{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+ 
+  height: 100%;
+  padding: 1em;
+}
+
+.main-date{
+  font-family: 'Satoshi-Medium';
+  font-size: clamp(3rem, 2.5vw, 4rem);
+  padding: .25em;
+}
+
+.sub-date{
+  font-family: 'Satoshi-Bold';
+  font-size: clamp(5rem, 40vw, 7rem);
+}
+
+.dayOfMonth {
+  display: block;
+}
+
+/*-------------------------------------- End-Date --------------------------------------*/
 
 
 @media (min-width: 0px) and (max-width: 320px) {
-  .layout{
-    height: 100%;
-  }
   body{
     align-items: center;
     height: 100vh;
+  }
+
+  .layout{
+    height: 100%;
   }
   
   .weather {
@@ -311,9 +268,6 @@ section {
     font-size: 2em;
   }
 
-  .weather img{
-    top:0;
-  }
   .time{
     grid-area: 2 / 1 / 3 / 2;
     justify-content: space-evenly;
@@ -362,7 +316,6 @@ section {
     width: 1px;
     height: 85px;
   }
-  
 }
 
 @media (min-width: 321px) and (max-width: 768px) {
