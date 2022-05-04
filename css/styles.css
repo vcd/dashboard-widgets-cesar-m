@@ -41,6 +41,7 @@ body{
   gap: .2em;
   background: #E0FBFC;
   color: #293241;
+  position: relative;
 }
 
 .weather-heading{
@@ -83,6 +84,25 @@ body{
 
 .weather img {
   max-width: 40%;
+}
+
+.btn-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+
+.temp-button{
+  background: none;
+  border: none;
+  font-family: 'Satoshi-Bold';
+  font-size: 1.5em;
+  color: #293241;
+}
+
+.btn-selected{
+  color: #EE6C4D;
 }
 /*-------------------------------------- End-Weather --------------------------------------*/
 
@@ -328,7 +348,6 @@ body{
   .layout{
     height: 100vh;
     width: 100vw;
-    background: green;
   }
   
   .weather {
