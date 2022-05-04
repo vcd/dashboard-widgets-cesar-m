@@ -37,7 +37,7 @@ body{
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  
+
   gap: .2em;
   background: #E0FBFC;
   color: #293241;
@@ -88,9 +88,9 @@ body{
 
 .btn-container {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1em;
+  top: 2px;
+  right: 0;
+  left: 1em;
 }
 
 .temp-button{
@@ -301,7 +301,9 @@ body{
     height: calc(100vh/3);
     min-height: 150px;
   }
-
+  .clock-wrapper{
+    padding: .1em;
+  }
   .clock{
     width: 150px;
     height: 150px;
@@ -336,9 +338,16 @@ body{
     width: 1px;
     height: 85px;
   }
+
+  .temp-button{
+    font-size: 1em;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 768px) {
+  .temp-button{
+    font-size: 1em;
+  }
   body{
     align-items: center;
     height: 100vh;
@@ -355,7 +364,7 @@ body{
     width: 100vw;
     height: calc(100vh/3);
     min-height: 200px;
-    flex-flow: column wrap;
+    /* flex-flow: column nowrap; */
     gap: 0;;
   }
 
@@ -384,16 +393,18 @@ body{
   }
 
   .sub-date{
-    font-size: 4em;;
+    font-size: 3em;;
   }
 
   .time>time{
     font-size: 2.5em;
   }
-  
+  .clock-wrapper{
+    padding: .1em;
+  }
   .clock{
     width: 200px;
-    height: 200px;
+    max-height: 200px;
   }
 
   .clock .hour, .hr{
