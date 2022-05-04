@@ -10,6 +10,14 @@ const units = 'imperial';
 // URL query string
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=${units}`;
 
+//capitalize first letter of every word
+const capitalize = (s) => {
+  return s.replace(/\w\S*/g, function(txt){
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+
 // Using fetch to get data
 fetch(url)
 .then( response => response.json() )
@@ -30,7 +38,7 @@ fetch(url)
     <img src="/icons/${data.weather[0].icon}.png" alt="Placeholder">
     <data value="${data.main.temp}" class="temp">${parseInt(data.main.temp)}&#176;</data>
     <div class="information">
-      <data value="${data.weather[0].description}" class="description">${data.weather[0].description}</data>
+      <data value="${data.weather[0].description}" class="description">${capitalize(data.weather[0].description)}</data>
       <data value="${data.name}" class="city">${data.name}</data>
       <data value="${data.main.feels_like}" class="feels-like">Feels like ${parseInt(data.main.feels_like)}&#176;</data>
     </div>
