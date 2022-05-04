@@ -1,5 +1,7 @@
 // API key. Replace with your API key
-const APIKEY = "6606328af7a452913a3eb62639bcdeed";
+import  API_KEY  from "./config.js";
+
+const APIKEY = API_KEY;
 // City
 const city = 'Spokane';
 // Units for Farenheit
@@ -30,6 +32,7 @@ fetch(url)
     <div class="information">
       <data value="${data.weather[0].description}" class="description">${data.weather[0].description}</data>
       <data value="${data.name}" class="city">${data.name}</data>
+      <data value="${data.main.feels_like}" class="feels-like">Feels like ${parseInt(data.main.feels_like)}&#176;</data>
     </div>
   `;
   
